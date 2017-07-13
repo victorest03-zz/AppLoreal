@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLoreal.Pages.CoursePage"
+             Title="Detalle del Curso" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <Grid RowSpacing="0" BackgroundColor="WhiteSmoke">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- header background -->
+                    <Image Source="Background_loreal.jpg" Aspect="AspectFill"/>
+
+                    <StackLayout Grid.Row="1" Padding="0,10,0,0">
+                        <Label Text="{Binding CourseModel.Name}" Style="{StaticResource ProfileNameLabel}"/>
+                        <Label Text="{Binding CourseModel.Brand}"
+                               Style="{StaticResource ProfileTagLabel}"/>
+                    </StackLayout>
+
+                    <Grid Grid.Row="2" Margin="10,0" ColumnSpacing="0" BackgroundColor="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/> 
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0">
+                            <Label Text="{Binding CourseModel.NroClases}" Style="{StaticResource StatsNumberLabel}"/>
+                            <Label Text="Nro.&#10;Clases" Style="{StaticResource StatsCaptionLabel}"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1">
+                            <Label Text="{Binding CourseModel.CupoMaximo}" Style="{StaticResource StatsNumberLabel}"/>
+                            <Label Text="Max.&#10;Participantes" Style="{StaticResource StatsCaptionLabel}"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2">
+                            <Label Text="{Binding CourseModel.CupoDisponible}" Style="{StaticResource StatsNumberLabel}"/>
+                            <Label Text="Cupo&#10;Disponibles" Style="{StaticResource StatsCaptionLabel}"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="30,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="Marker.png" Grid.Column="0" Grid.Row="0"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Av. Santa Cruz 985, Lima, Peru"/>
+                        <Image Source="Clock.png" Grid.Column="0" Grid.Row="2"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="Dec. 17 2017"></Label>
+                    </Grid>
+                    <Label Text="Author on SoftMediaConsultores.com, Software architect, Certified Xamarin Mobile Developer, UX enthusiast, mobile addicted and clean code lover"
+                           Grid.Row="4"
+                           Style="{StaticResource MainBodyLabel}"
+                           Margin="20,0"/>
+                </Grid>
+            </ScrollView>
+            <Button Text="Unirse al Curso" Margin="10,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

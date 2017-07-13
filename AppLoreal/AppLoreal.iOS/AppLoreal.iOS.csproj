@@ -148,6 +148,39 @@
   <ItemGroup>
     <BundleResource Include="Resources\facebook_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kerastase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Courses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Background_loreal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Marker.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

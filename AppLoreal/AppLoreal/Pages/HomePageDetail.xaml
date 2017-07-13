@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLoreal.Pages.HomePageDetail"
+             Title="Inicio">
+    <StackLayout>
+        <SearchBar x:Name="searchBar" Placeholder="Busqueda de Cursos..." />
+        <ListView x:Name="lsCursos" ItemsSource="{Binding CursosItems}" HasUnevenRows="True" SeparatorColor="Black" ItemSelected="LsCursos_OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" Padding="5,0" HorizontalOptions="FillAndExpand" BackgroundColor="White" HeightRequest="100" Spacing="5">
+                            <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="80" WidthRequest="90"/>
+                            <StackLayout Orientation="Vertical" Padding="5">
+                                <Label Text="{Binding Name}"
+                                       TextColor="Black" />
+                                <Label Text="{Binding Brand}"
+                                       TextColor="#727272" />
+                            </StackLayout>
+                            <Image Source="logo_free.png" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="EndAndExpand" IsVisible="{Binding IsFree}"/>
+                            <Label Text="{Binding cPrice}"
+                                   TextColor="Black" IsVisible="{Binding IsNotFree}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

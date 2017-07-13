@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLoreal.Pages.HomePageMaster"
+             Title="Master">
+    <ListView x:Name="MenuItemsListView" SeparatorVisibility="None" BackgroundColor="White" ItemsSource="{Binding MenuItems}" HasUnevenRows="True">
+        <ListView.Header>
+            <Grid BackgroundColor="#B88991" Padding="10,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="user.png" Grid.Row="1" HorizontalOptions="Start" HeightRequest="80"/>
+                <Label Text="Javier Cardenas" HorizontalOptions="Start" FontAttributes="Bold" TextColor="White" FontSize="20" Grid.Row="2"/>
+                <Label Text="Estilista" HorizontalOptions="Start" TextColor="White" FontSize="15" Grid.Row="3"/>
+            </Grid>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="10,10" Spacing="10" BackgroundColor="White">
+                        <Image VerticalOptions="Center" Source="{Binding IconUrl}" HeightRequest="25" WidthRequest="40"/>
+                        <Label VerticalOptions="Center" Text="{Binding Title}" TextColor="Black" FontSize="15"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,24 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppLoreal.Pages.LoginPage">
+             x:Class="AppLoreal.Pages.LoginPage"
+             BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
                 <Image Source="loreal_logo.png" Margin="0,70,0,0"/>
             </StackLayout>
-            <StackLayout Padding="20,0,20,0" Spacing="10" VerticalOptions="StartAndExpand">
-                <Label Text="Usuario:" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <StackLayout Padding="20,0,20,0" Spacing="5" VerticalOptions="StartAndExpand">
+                <Label Text="Usuario:" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black"/>
                 <Entry Placeholder="Ingrese Usuario" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <Label Text="Password:" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="Password:" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black"/>
                 <Entry Placeholder="Ingrese Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <Button Text="Iniciar Sesion" BackgroundColor="Navy" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Center" Margin="0,8,0,8" WidthRequest="150"/>
-                <Button Text="Google" Image="google_icon.png" BackgroundColor="#CF4332" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <Button Text="Facebook" Image="facebook_icon.png" BackgroundColor="#3C66C4" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <StackLayout Orientation="Horizontal" Margin="0,15,0,10">
-                    <Label Text="Olvidó su password?" FontSize="14" HorizontalOptions="CenterAndExpand"></Label>
-                    <Label Text="Nuevo aquí? Regístrate" FontSize="14" HorizontalOptions="CenterAndExpand"></Label>
+                <StackLayout
+                    Padding="0,0,30,0"
+                    Orientation="Horizontal">
+                    <Switch
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center">
+                    </Switch>
+                    <Label
+                        Text="Recordarme?"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        TextColor="Black">
+                    </Label>
+                </StackLayout>
+
+                <Button Text="Iniciar Sesion" BackgroundColor="Navy" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Command="{Binding LoginCommand}"/>
+                <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Center" Margin="0,8,0,4" WidthRequest="150"/>
+                <StackLayout>
+                    <Button Text="Google" Image="google_icon.png" BackgroundColor="#CF4332" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Button Text="Facebook" Image="facebook_icon.png" BackgroundColor="#3C66C4" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,10" VerticalOptions="EndAndExpand">
+                    <Label Text="Olvidó su password?" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="End"/>
+                    <Label Text="Nuevo aquí? Regístrate" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NewUserCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

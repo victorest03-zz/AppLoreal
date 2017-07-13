@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLoreal.Pages.CreateUserPage"
+             Title="Registro"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Spacing="5" Padding="20">
+                    <Label TextColor="Black" Text="Nombres(*):"/>
+                    <Entry Placeholder="Ingrese Nombre"/>
+                    <Label TextColor="Black" Text="Apellidos(*):"/>
+                    <Entry Placeholder="Ingrese Nombre"/>
+                    <Label TextColor="Black" Text="E-mail :"/>
+                    <Entry Placeholder="Ingrese e-mail"/>
+                    <Label TextColor="Black" Text="Especialidad(*):"/>
+                    <Picker Title="--Seleccione Especialidad--">
+                        <Picker.Items>
+                            <x:String>Peluqueria</x:String>
+                            <x:String>Cosmetologia</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label TextColor="Black" Text="Telefono Fijo(*):"/>
+                    <Entry Keyboard="Telephone" Placeholder="Ingrese Telefono Fijo"/>
+                    <Label TextColor="Black" Text="Celular:"/>
+                    <Entry Keyboard="Telephone" Placeholder="Ingrese Celular"/>
+                    <Label TextColor="Black" Text="Fecha Nacimiento:"/>
+                    <DatePicker>
+                        <DatePicker.Format>dd MMMM yyyy</DatePicker.Format>
+                    </DatePicker>
+                    <Label TextColor="Black" Text="Salon(*):"/>
+                    <Picker Title="--Seleccione Salon--">
+                        <Picker.Items>
+                            <x:String>Peluquerio</x:String>
+                            <x:String>Cosmetologo</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="Black" HorizontalOptions="StartAndExpand">Acepta Terminos y Condiciones ?</Label>
+                        <Switch HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <Button Text="Registrarse" BackgroundColor="Navy" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
